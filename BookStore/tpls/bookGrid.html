@@ -1,0 +1,26 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">书籍列表</div>
+    	<div class="panel-body">
+    		<table class="table table-striped">
+    			<thead>
+    				<tr class="active">
+    					<td>ID</td>
+    					<td>书名</td>
+    					<td>作者</td>
+    					<td>发布时间</td>
+    					<td>价格</td>
+    				</tr>
+    			</thead>
+    			<tbody>
+    				<tr class="info" ng-repeat="book in books">
+    					<td>{{book.bookId}}</td>
+    					<td>{{book.name}}</td>
+    					<td>{{book.author}}</td>
+    					<td>{{book.pubTime}}</td>
+    					<td>{{book.price|currency:"￥"}}</td>
+    				</tr>
+    			</tbody>
+			</table>
+		</div>
+	</div>
+</div>

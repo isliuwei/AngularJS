@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>expander</title>
+	<style>
+		.expander{
+			width: 300px;
+			border: 1px solid #000;
+			cursor: pointer;
+		}
+		.expander-title{
+			text-indent: 1em;
+			height: 30px;
+			line-height: 30px;
+			background: #000;
+			color: #fff;
+		}
+		.expander-body{
+			text-indent: 1em;
+			text-align: justify;
+		}
+
+	</style>
+
+</head>
+<body>
+	<div ng-controller="myCtrl">
+		<expander title="标题党">{{body}}</enpander>
+	</div>
+	
+
+
+
+
+	<script src="../js/angular.js"></script>
+	<script src="../js/expander.js"></script>
+	
+</body>
+</html>

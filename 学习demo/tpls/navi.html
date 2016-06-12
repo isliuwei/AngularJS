@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default" role="navigation">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="#">AngularJS</a>
+   </div>
+   <div>
+      <ul class="nav navbar-nav">
+         <li class="active"><a ui-sref="index">首页</a></li>
+         <!-- 子状态需要在ui-sref时才加点 ui-sref='.nav1' -->
+         <li><a ui-sref='.nav1'>导航一</a></li>
+         <li><a ui-sref='.nav2'>导航二</a></li>
+         <li><a ui-sref='.nav3'>导航三</a></li>
+      </ul>
+   </div>
+</nav>
+
+
+<div ui-view></div>
