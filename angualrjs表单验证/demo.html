@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <title>Document</title>
+  <style>
+    .error{
+      border: 1px solid #f00;
+      background-color: rgb(250, 255, 189);
+    }
+    .ok{
+      border: 1px solid #2ecc71;
+    }
+    .error-info{
+      color: #f00;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row" ng-controller="MainController">
+    <form class="col-md-10" name="signUpForm" ng-submit="submitForm()">
+    <div class="form-group">
+      <label for="username">登录名</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        placeholder="登录名由6-22位数字或字母组成"
+
+        name="username"
+        ng-pattern="/^[A-Za-z0-9]+$/"
+        ng-model="username"
+        ng-class="{
+          'error': signUpForm.username.$invalid && signUpForm.username.$touched ,
+          'ok':signUpForm.username.$valid }"
+        ng-minlength="6"
+        ng-maxlength="22"
+        required
+      >
+      <p
+        class=""
+        ng-if="signUpForm.username.$invalid && signUpForm.username.$touched"
+        ng-class="{'error-info': signUpForm.username.$invalid}"
+      >!请检查输入</p>
+    </div>
+    <div class="form-group">
+      <label for="pwd1">密码</label>
+      <input type="password"  ng-minlength="6" ng-maxlength="22" class="form-control" id="pwd1" placeholder="登录名由6-22位数字或字母组成">
+      <!-- <p>{{username}}</p> -->
+    </div>
+    <div class="form-group">
+      <label for="pwd2">确认密码</label>
+      <input type="password" ng-minlength="6" ng-maxlength="22" class="form-control" id="pwd2" placeholder="请再输入一遍密码">
+      <!-- <p>{{username}}</p> -->
+    </div>
+    <div class="form-group">
+      <label for="tel">公司联系电话</label>
+      <input type="num" class="form-control" id="tel" placeholder="请输入联系人手机号">
+    </div>
+    <div class="form-group">
+      <label for="email">邮箱</label>
+      <input type="password" class="form-control" id="email" placeholder="请输入联系人邮箱">
+    </div>
+    <div class="form-group">
+      <label for="company">公司名称</label>
+      <input type="password" class="form-control" id="company" placeholder="请输入正确的公司名称">
+    </div>
+    <div class="form-group">
+      <label for="website">公司网址</label>
+      <input type="password" class="form-control" id="website" placeholder="请输入您的公司网址，以http://开头">
+    </div>
+
+    <button type="submit" ng-disabled="signUpForm.$invalid" class="btn btn-primary">完成注册</button>
+  </form>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/angular.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
