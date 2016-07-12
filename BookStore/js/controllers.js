@@ -3,7 +3,7 @@
 /**
  *angular.module()第一个参数是你的模块的别名，第二个参数数组是你当前模块所依赖的其他模块
  *当前模块依赖 服务模块 BookStoreService
- *这样我们就可以在此模块中使用所以来模块中的服务与方法line38
+ *这样我们就可以在此模块中使用所以来模块中的服务与方法line44
  */
 
 var BookStoreCtrl = angular.module('BookStoreCtrl',['BookStoreService']);
@@ -11,25 +11,31 @@ var BookStoreCtrl = angular.module('BookStoreCtrl',['BookStoreService']);
 BookStoreCtrl
 .controller('bookTypeCtrl',['$scope',function($scope){
 	//$scope.bookCates = ['全部','计算机','金融','哲学','商务办公']
+	
 
 	$scope.bookTypes = [
 		{
+			'id': 0,
 			'name':'全部',
 			'type': 'all'
 		},
 		{
+			'id': 1,
 			'name':'计算机',
 			'type': 'comp'
 		},
 		{
+			'id': 2,
 			'name':'金融',
 			'type': 'fina'
 		},
 		{
+			'id': 3,
 			'name':'哲学',
 			'type': 'phil'
 		},
 		{
+			'id': 4,
 			'name':'商务办公',
 			'type': 'off'
 		}
@@ -49,7 +55,7 @@ BookStoreCtrl
 	}
 	// $http({
 	// 	method: 'GET',
-	// 	url: 'data/books'+$stateParams.bookType+'.json',
+		// url: 'data/books'+$stateParams.bookType+'.json',
 	// }).success(function(data){
 	// 	$scope.books = data;
 	// });
