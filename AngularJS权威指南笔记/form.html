@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>7-2 form</title>
+  <link rel="stylesheet" href="framework/foundation/css/foundation.min.css" />
+</head>
+<body>
+  {{signUpForm.name}}
+
+      <form action="#" name="signUpForm" ng-submit="signUpForm()">
+        <div class="row">
+          <div class="medium-12 columns">
+            <label>Your name
+              <input
+                type="text"
+                placeholder="Name"
+                name="name"
+                ng-model="signup.name"
+                ng-minlength="3"
+                ng-maxlength="20"
+                required
+              >
+            </label>
+          </div>
+
+
+          <div class="error"
+            ng-show="signUpForm.name.$dirty && signUpForm.name.$invalid">
+
+            <small class="error"
+              ng-show="signUpForm.name.$dirty && signUpForm.name.$error.required">
+              Your name is required.
+            </small>
+
+            <small class="error"
+              ng-show="signUpForm.email.$dirty && ignUpForm.name.$error.minlength">
+              Your name is required to be at least 3 characters
+            </small>
+
+            <small class="error"
+              ng-show="signUpForm.email.$dirty && ignUpForm.name.$error.maxlength">
+              Your name cannot be longer than 20 characters.
+            </small>
+
+          </div>
+          <div class="medium-6 columns">
+            <label>Your email
+              <input
+                type="email"
+                placeholder="Email"
+
+
+              >
+            </label>
+          </div>
+          <div class="medium-6 columns">
+            <label>Username
+              <input type="text" placeholder="Desired username">
+            </label>
+          </div>
+
+          <div class="left-1 columns">
+          <button type="submit" for="exampleFileUpload" class="button">submit</button>
+          <div class="left-1 columns">
+        </div>
+
+
+    </form>
+
+
+
+<script src="framework/foundation/js/vendor/jquery.js"></script>
+<script src="framework/foundation/js/vendor/foundation.min.js"></script>
+<script src="framework/angular.js"></script>
+<script src="js/form.js"></script>
+</body>
+</html>

@@ -11,7 +11,7 @@ var BookStoreCtrl = angular.module('BookStoreCtrl',['BookStoreService']);
 BookStoreCtrl
 .controller('bookTypeCtrl',['$scope',function($scope){
 	//$scope.bookCates = ['全部','计算机','金融','哲学','商务办公']
-	
+
 
 	$scope.bookTypes = [
 		{
@@ -55,7 +55,7 @@ BookStoreCtrl
 	}
 	// $http({
 	// 	method: 'GET',
-		// url: 'data/books'+$stateParams.bookType+'.json',
+	// 	url: 'data/books'+$stateParams.bookType+'.json',
 	// }).success(function(data){
 	// 	$scope.books = data;
 	// });

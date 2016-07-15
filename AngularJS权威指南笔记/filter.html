@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>7-1 $filter</title>
+</head>
+<body>
+
+    <div ng-controller="MyController">
+
+      <input type="text" ng-model="filter">
+      <h2>{{filter | currency}}</h2>
+      <pre>{{ today | date:'medium' }}</pre>
+      <pre>{{ today | date:'short' }}</pre>
+      <pre>{{ today | date:'fullDate' }}</pre>
+      <pre>{{ today | date:'mediumDate' }}</pre>
+      <pre>{{ today | date:'shortDate' }}</pre>
+      <pre>{{ today | date:'mediumTime' }}</pre>
+      <pre>{{ today | date:'shortTime' }}</pre>
+      <pre>{{ today | date:'yyyy' }}</pre>
+      <pre>{{ today | date:'yy' }}</pre>
+      <pre>{{ today | date:'y' }}</pre>
+      <pre>{{ today | date:'MMMM' }}</pre>
+      <pre>{{ today | date:'MM' }}</pre>
+      <pre>{{ today | date:'M' }}</pre>
+      <pre>{{ today | date:'dd' }}</pre>
+      <pre>{{ today | date:'d' }}</pre>
+      <pre>{{ today | date:'EEEE' }}</pre>
+      <pre>{{ today | date:'EEE' }}</pre>
+      <pre>{{ today | date:'HH'}}</pre>
+      <pre>{{ today | date:'H'}}</pre>
+      <pre>{{ today | date:'hh'}}</pre>
+      <pre>{{ today | date:'h'}}</pre>
+      <pre>{{ today | date:'m' }}</pre>
+      <pre>{{ today | date:'ss' }}</pre>
+      <pre>{{ today | date:'s' }}</pre>
+      <pre>{{ today | date:'.sss' }}</pre>
+      <pre>{{ today | date:'a' }}</pre>
+      <pre>{{ today | date:'Z' }}</pre>
+      <pre>{{ today | date:'MMMd, y' }}</pre>
+      <pre>{{ today | date:'EEEE, d, M' }}</pre>
+      <pre>{{ today | date:'hh:mm:ss.sss' }}</pre>
+      <pre>{{ ['Ari','Lerner','Likes','To','Eat','Pizza'] | filter:'e' }}</pre>
+      <pre>{{ [{
+         'name': 'Ari',
+         'City': 'San Francisco',
+         'favorite food': 'Pizza'
+         },{
+         'name': 'Nate',
+         'City': 'San Francisco',
+         'favorite food': 'indian food'
+         }] | filter:{'favorite food': 'Pizza'} }}
+       </pre>
+       <pre>{{ ['Ari','likes','to','travel'] | filter:isCapitalized }}
+       </pre>
+       <pre>{{ {'name': 'Ari', 'City': 'SanFrancisco'} | json }}</pre>
+       <pre>{{ 'San Francisco is very cloudy' | limitTo:3 }}</pre>
+       <pre>{{ 'San Francisco is very cloudy' | limitTo:-6 }}</pre>
+       <pre>{{ ['a','b','c','d','e','f'] | limitTo:1 }}</pre>
+       <pre>{{ "San Francisco is very cloudy" | lowercase }}</pre>
+       <pre>{{ 123456789 | number }}</pre>
+       <pre>{{ 1.234567 | number:2 }}</pre>
+       <pre>{{ 1.235567 | number:2 }}</pre>
+       <pre>{{ [{
+         'name': 'Ari',
+         'status': 'awake'
+         },{
+         'name': 'Q',
+         'status': 'sleeping'
+         },{
+         'name': 'Nate',
+         'status': 'awake'
+         }] | orderBy:'name' }}
+       </pre>
+       <pre>{{ [{
+         'name': 'Ari',
+         'status': 'awake'
+         },{
+         'name': 'Q',
+         'status': 'sleeping'
+         },{
+         'name': 'Nate',
+         'status': 'azake'
+       }] | orderBy:'status':true }}
+       </pre>
+       <pre>{{ "San Francisco is very cloudy" | uppercase }}</pre>
+       {{"abcdefg"|capitalize}}
+
+
+    </div>
+
+
+
+
+
+
+<script src="framework/angular.js"></script>
+<script src="js/filter.js"></script>
+</body>
+</html>

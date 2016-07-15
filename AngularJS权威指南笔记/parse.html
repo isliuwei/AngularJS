@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>6-1 $parse expression</title>
+</head>
+<body>
+  <div ng-controller="MyController">
+       <input ng-model="expr"
+              type="text"
+              placeholder="Enter an expression" />
+       <h2>{{ parseValue }}</h2>
+  </div>
+
+
+
+<script src="framework/angular.js"></script>
+<script src="js/parse.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>7-2 valid form</title>
+</head>
+<body>
+
+    <div ng-controller="FormController">
+        <form action="#" name="signUpForm">
+          <input
+              type="text"
+              placeholder="必填项 @required"
+              ng-model="required"
+              name="required"
+              required
+          >
+          <p ng-if="signUpForm.required.$error.required && signUpForm.required.$touched">*必填项</p>
+
+          <br>
+
+          <input
+              type="text"
+              placeholder="最小长度 @minlength"
+              ng-model="minlength"
+              name="minlength"
+              minlength="4"
+          >
+          <p ng-if="signUpForm.minlength.$error.minlength && signUpForm.minlength.$touched">*最小长度为4</p>
+
+          <br>
+
+          <input
+              type="text"
+              placeholder="最大长度 @maxlength"
+              ng-model="maxlength"
+              name="maxlength"
+              maxlength="8"
+          >
+          <p ng-if="signUpForm.maxlength.$error.maxlength && signUpForm.maxlength.$touched">*最大长度为8</p>
+
+          <br>
+
+          <input
+              type="number"
+              placeholder="数字 @number"
+              ng-model="userdata.number"
+              name="number"
+          >
+          <p ng-if="signUpForm.number.$error.number && signUpForm.number.$touched">*必须为数字</p>
+
+          <br>
+
+          <input
+              type="email"
+              placeholder="邮箱 @email"
+              ng-model="userdata.email"
+              name="email"
+          >
+          <p ng-if="signUpForm.email.$error.email && signUpForm.email.$touched">*邮箱格式不正确</p>
+
+          <br>
+
+          <input
+              type="url"
+              placeholder="@url"
+              ng-model="userdata.url"
+              name="url"
+          >
+          <p ng-if="signUpForm.url.$error.url && signUpForm.url.$touched">*url格式不正确</p>
+
+          <br>
+
+
+
+        </form>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+  </form>
+
+
+<script src="framework/angular.js"></script>
+<script src="js/valid.js"></script>
+
+</body>
+</html>

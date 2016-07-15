@@ -9,9 +9,9 @@
             <a ui-sref="bookList({bookType:2})" class="list-group-item">金融</a>
             <a ui-sref="bookList({bookType:3})" class="list-group-item">哲学</a>
             <a ui-sref="bookList({bookType:4})" class="list-group-item">高端办公</a> -->
-            
+
             <a ui-sref="bookList({bookType:{{bookType.id}}})" class="list-group-item" ng-repeat="bookType in bookTypes">{{bookType.name}}</a>
-           
+
         </div>
     </div>
 </div>

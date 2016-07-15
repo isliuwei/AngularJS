@@ -38,12 +38,12 @@ bookStoreApp.config(function($stateProvider,$urlRouterProvider){
 			}
 		})
 
-		
 
 
-		
 
-		
-		
+
+
+
+
 
 });
