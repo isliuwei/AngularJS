@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Shopping Cart</title>
+  <title>ng-bind</title>
   <link rel="stylesheet" href="framework/bootstrap/css/bootstrap.min.css" />
   <style>
-      .row{
+      .form-group{
         margin-top: 20px;
       }
   </style>
@@ -15,26 +15,10 @@
 <body>
 
 
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-        <form class="form-horizontal" ng-controller="myCtrl">
-          <div ng-repeat="item in items">
-            <div class="form-group">
-              <label for="" class="col-sm-2 control-label">{{item.title}}</label>
-              <div class="col-sm-4">
-                <input ng-model="item.quantity"  type="number" class="form-control" id="" placeholder="">
-                  {{item.quantity*item.price | currency:"￥"}}
-              </div>
-              <button ng-click="remove($index)" class="btn btn-danger">remove</button>
-            </div>
-          </div>
-
-      </form>
-    </div>
-  </div>
 
 
-  <!-- <div class="form-group">
+
+  <div class="form-group">
     <label for="" class="col-sm-2 control-label"><pre>ng-bind VS "{"{""}"}"}"</pre></label>
     <div class="col-sm-4">
         <input type="text" class="form-control" ng-model="name">
@@ -47,7 +31,7 @@
           因为angualr是在页面渲染加载完成后，才开始执行的。
         </pre>
     </div>
-  </div> -->
+  </div>
 
 
 
@@ -58,6 +42,5 @@
 
 
 <script src="framework/angular.js"></script>
-<script src="js/cart.js"></script>
 </body>
 </html>

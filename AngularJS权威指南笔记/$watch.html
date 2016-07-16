@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>$watch</title>
+  <link rel="stylesheet" href="framework/bootstrap/css/bootstrap.min.css" />
+  <style>
+      .form-group{
+        margin-top: 20px;
+      }
+  </style>
+</head>
+<body>
+
+
+
+<form ng-submit="submit_form()" class="form-horizontal" ng-controller="myCtrl">
+
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">begin</label>
+      <div class="col-sm-2">
+          <input type="number" class="form-control" ng-model="obj.begin" ng-change="calcu()">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">end</label>
+      <div class="col-sm-2">
+          <input type="number" class="form-control" ng-model="obj.end">
+      </div>
+      <button type="submit" class="btn btn-success">submit</button>
+      <button type="reset" ng-click="reset()" class="btn btn-default">Reset</button>
+    </div>
+
+
+</form>
+
+
+
+
+
+
+
+
+
+<script src="framework/angular.js"></script>
+<script src="js/watch.js">
+
+</script>
+</body>
+</html>
