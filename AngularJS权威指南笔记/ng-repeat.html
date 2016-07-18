@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ng-repeat</title>
+  <link rel="stylesheet" href="framework/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+
+
+<div ng-controller="bookCtrl" ng-app="myApp">
+  <div class="container">
+    <table class="table table-striped">
+        <tr>
+          <td>BookID</td>
+          <td>BookName</td>
+          <td>BookAuthor</td>
+        </tr>
+
+        <tr ng-repeat="book in books">
+          <!-- <td>{{book.ID}}</td>
+          <td>{{book.name}}</td>
+          <td>{{book.author}}</td> -->
+          <td ng-bind="book.ID"></td>
+          <td ng-bind="book.name"></td>
+          <td ng-bind="book.author"></td>
+        </tr>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="framework/angular.js"></script>
+<script src="js/repeat.js"></script>
+</body>
+</html>
