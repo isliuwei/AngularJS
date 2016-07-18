@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ng-class ng-style</title>
+  <link rel="stylesheet" href="framework/bootstrap/css/bootstrap.min.css" />
+  <style>
+      .error {
+        background-color: red;
+      }
+     .warning {
+       background-color: yellow;
+}
+  </style>
+</head>
+<body>
+
+
+
+    <div ng-controller='HeaderController'>
+      <div ng-class='{error: isError, warning: isWarning}'>
+        {{messageText}}
+      </div>
+      <button ng-click='showError()'>Simulate Error</button>
+      <button ng-click='showWarning()'>Simulate Warning</button>
+    </div>
+
+
+
+
+
+
+
+<script src="framework/angular.js"></script>
+<script src="js/ng-class.js"></script>
+</body>
+</html>

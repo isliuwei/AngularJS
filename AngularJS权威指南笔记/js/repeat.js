@@ -25,4 +25,7 @@ myApp.controller('bookCtrl',['$scope',function($scope){
         'author': "佚名"
       }
     ];
+    $scope.selected = function(row) {
+      $scope.selectedRow = row;
+    };
 }]);
