@@ -27,5 +27,32 @@ myApp.controller('myCtrl',['$scope',function($scope){
       $scope.items.splice(index, 1);
     }
 
+    $scope.totalCart = function(){
+      var total = 0;
+      for(var i=0; i<$scope.items.length; i++){
+        total+=$scope.items[i].quantity*$scope.items[i].price;
+      }
+      return total;
+
+    }
+
+
+
+    $scope.$watch($scope.totalCart,function(newValue,oldValue,scope){
+      //debugger;
+      $scope.discount = newValue > 500 ? 10 : 0;
+
+    });
+
+
+    $scope.subtotal = function() {
+      return $scope.totalCart() - $scope.discount;
+    };
+
+
+
+
+
+
 
 }]);
