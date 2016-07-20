@@ -14,9 +14,11 @@ messages = [
 ];
 
 appCtrl.controller('ListController',['$scope',function($scope){
+    // 把我们的邮件发布给邮件列表模板
     $scope.messages = messages;
 }]);
 
 appCtrl.controller('DetailController',['$scope','$routeParams',function($scope,$routeParams){
+    // 从路由信息(从 URL 中解析出来的)中获取邮件 id,然后用它找到正确的邮件对象
     $scope.message = messages[$routeParams.id];
 }]);
