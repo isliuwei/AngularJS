@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ng-form</title>
+  <link rel="stylesheet" href="framework/bootstrap/css/bootstrap.min.css" />
+  <script src="framework/angular.js"></script>
+  <script src="js/ng-form.js"></script>
+  <style>
+    .container{
+      margin-top: 100px;
+    }
+    .error{
+      border: 1px solid #f00;
+    }
+  </style>
+</head>
+<body>
+
+    <div class="container" ng-controller="formCtrl">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <blockquote>
+            <p ng-show="message">{{message}}</p>
+            <p class="bg-warning" ng-show="(signUpForm.firstName.$error.required && signUpForm.firstName.$touched)|| (signUpForm.lastName.$error.required && signUpForm.lastName.$touched) || (signUpForm.email.$error.required && signUpForm.email.$touched) || (signUpForm.age.$error.required && signUpForm.age.$touched)">必填字段</p>
+            <p class="bg-info" ng-show="signUpForm.email.$error.email && signUpForm.email.$touched">邮箱格式不正确</p>
+            <p class="bg-success" ng-show="(signUpForm.age.$error.maxlength || signUpForm.age.$error.minlength) && signUpForm.age.$touched">年龄长度不合法</p>
+          </blockquote>
+            <form action="#" method="post" class="form-horizontal" name="signUpForm">
+              <div class="form-group">
+                <label for="firstName" class="col-sm-2 control-label">First Name</label>
+                <div class="col-sm-6">
+                  <input
+                    name="firstName"
+                    ng-model="userdata.firstName"
+                    required
+                    ng-class="{'error': signUpForm.firstName.$invalid && signUpForm.firstName.$touched }"
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    placeholder="First Name">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="lastName" class="col-sm-2 control-label">Last Name</label>
+                <div class="col-sm-6">
+                  <input
+                    name="lastName"
+                    ng-model="userdata.lastName"
+                    required
+                    ng-class="{'error': signUpForm.lastName.$invalid && signUpForm.lastName.$touched }"
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    placeholder="Last Name">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-6">
+                  <input
+                    name="email"
+                    ng-model="userdata.email"
+                    required
+                    ng-class="{'error': signUpForm.email.$invalid && signUpForm.email.$touched }"
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Email">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="age" class="col-sm-2 control-label">Age</label>
+                <div class="col-sm-6">
+                  <input
+                    name="age"
+                    ng-model="userdata.age"
+                    ng-maxlength="3"
+                    ng-minlength="1"
+                    required
+                    ng-class="{'error': signUpForm.age.$invalid && signUpForm.age.$touched }"
+                    type="number"
+                    class="form-control"
+                    id="age"
+                    placeholder="Age">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-6">
+                  <button ng-click="showMsg()" ng-disable="signUpForm.$invalid" class="btn btn-primary col-sm-offset-4" type="submit">submit</button>
+                </div>
+              </div>
+
+            </form>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+</html>
