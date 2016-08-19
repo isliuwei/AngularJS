@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="framework/bootstrap/css/bootstrap.min.css" />
+  <style>
+      .row{
+        margin-top: 20px;
+      }
+      .btn-ctrl{
+        padding: 0px 10px;
+      }
+      .form-control{
+        display: inline-block;
+        width: 100px;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+      /*去掉html5 input number默认样式*/
+	 input[type="number"]{
+	   -moz-appearance: textfield;
+	 }
+	 input::-webkit-outer-spin-button,
+	 input::-webkit-inner-spin-button{
+	   -webkit-appearance: none !important;
+	   margin: 0;
+	 }
+  </style>
+</head>
+<body>
+
+
+  <div class="row" ng-controller="cartCtrl">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="bs-example" data-example-id="striped-table">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>商品编号</th>
+          <th>商品名称</th>
+          <th>商品单价</th>
+          <th>商品库存</th>
+          <th>商品数量</th>
+          <th>价格小记</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="shop in shopping">
+          <th>{{shop.id}}</th>
+          <td>{{shop.name}}</td>
+          <td>{{shop.price}}</td>
+          <td>{{shop.stock}}</td>
+          <td><button ng-click="sub($index)" class="btn btn-primary btn-ctrl">-</button><input type="number" class="form-control" ng-model="shop.number"><button ng-click="add($index)" class="btn btn-success btn-ctrl">+</button></td>
+          <td>{{shop.price * shop.number | currency:"￥"}}</td>
+          <td><button ng-click="add()" class="btn btn-warning">查看</button> <button ng-click="remove($index)" class="btn btn-danger">删除</button></td>
+        </tr>
+        
+        <tr class="info">
+          <th></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>{{numberTotal()}}</td>
+          <td>{{priceTotal() | currency:"￥"}}</td>
+          <td><button ng-click="clear()" class="btn btn-danger">清空购物车</button></td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+    </div>
+  </div>
+
+
+  
+ 
+
+
+
+
+
+
+
+
+
+<script src="framework/angular.js"></script>
+<script src="js/cart1.js"></script>
+<script src="js/factory.js"></script>
+
+</body>
+</html>

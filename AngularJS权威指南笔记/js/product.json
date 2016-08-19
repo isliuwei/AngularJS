@@ -1,0 +1,45 @@
+[
+  {
+    'id': 'JD0010',
+    'name': '商品一',
+    'price': 200,
+    'number': 1,
+    'stock': 50
+  },
+  {
+    'id': 'JD0310',
+    'name': '商品二',
+    'price': 1200,
+    'number': 1,
+    'stock': 20
+  },
+  {
+    'id': 'JD0012',
+    'name': '商品三',
+    'price': 300,
+    'number': 1,
+    'stock': 40
+  },
+  {
+    'id': 'JD1010',
+    'name': '商品四',
+    'price': 540,
+    'number': 1,
+    'stock': 30
+  },
+  {
+    'id': 'JD4010',
+    'name': '商品五',
+    'price': 100,
+    'number': 1,
+    'stock': 40
+  },
+  {
+    'id': 'JD0210',
+    'name': '商品六',
+    'price': 2000,
+    'number': 1,
+    'stock': 29
+  }
+
+];

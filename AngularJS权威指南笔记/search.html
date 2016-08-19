@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="framework/bootstrap/css/bootstrap.min.css" />
+  <style>
+      .row{
+        margin-top: 20px;
+      }
+      .btn-ctrl{
+        padding: 0px 10px;
+      }
+      .form-control{
+        display: inline-block;
+        width: 200px;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+      /*去掉html5 input number默认样式*/
+	 input[type="number"]{
+	   -moz-appearance: textfield;
+	 }
+	 input::-webkit-outer-spin-button,
+	 input::-webkit-inner-spin-button{
+	   -webkit-appearance: none !important;
+	   margin: 0;
+	 }
+   table{
+    cursor: pointer;
+   }
+   
+  </style>
+</head>
+<body>
+
+
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2" ng-controller="myCtrl">
+        <label>全文匹配:
+          <input ng-model="search.$" type="text"  placeholder="Search Any" class="form-control"> 
+        </label>
+        <br />
+        <label>匹配编号:
+          <input ng-model="search.id" type="text"  placeholder="Search id" class="form-control"> 
+        </label>  
+        <br />
+        <label>匹配名称:
+          <input ng-model="search.name" type="text"  placeholder="Search name" class="form-control">
+        </label>  
+        <br />
+        <label>匹配价格: 
+          <input ng-model="search.price" type="text"  placeholder="Search price" class="form-control">
+        </label>  
+        <div class="bs-example" data-example-id="striped-table">
+          <table class="table ">
+            <thead>
+              <tr onselectstart="return false">
+                <th ng-click="type = 'id'; reverse=!reverse" ng-class="{'dropup':reverse}">产品编号<span class="caret"></span></th>
+                <th ng-click="type = 'name'; reverse=!reverse" ng-class="{'dropup':reverse}">产品名称<span class="caret"></span></th>
+                <th ng-click="type = 'price'; reverse=!reverse" ng-class="{'dropup':reverse}">产品价格<span class="caret"></span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="product in products | filter:search | orderBy:type:reverse">
+                  <th>{{product.id}}</th>
+                  <th>{{product.name}}</th>
+                  <th>{{product.price | currency: "￥"}}</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </div>
+
+
+  
+ 
+
+
+
+
+
+
+
+
+
+<script src="framework/angular.js"></script>
+<script src="js/search.js"></script>
+</body>
+</html>

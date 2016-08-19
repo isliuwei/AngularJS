@@ -11,6 +11,7 @@ myApp.controller('myController',['$scope','$timeout',function($scope,$timeout){
   };
   updateClock();
 }]);
+
 myApp.run(function($rootScope){
   $rootScope.name = "world!";
 });
